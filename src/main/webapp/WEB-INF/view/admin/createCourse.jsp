@@ -57,10 +57,12 @@
                             </div>
                            <hr/>
                            <br>
-                            <div class="col-md-8 form-group">
-                                <input type="submit" value="Save" class="btn btn-primary btn-block mt-3"/>
+                            <div class="col-md-8 form-group">  
+                            <input type="submit" value="Save" class="btn btn-primary btn-block mt-3"/>
+                        </div>
+                    </div>
                                 </form:form>
-                            </div>
+                           
                             <div class="col-md-8 form-group">
                                 <form:form action="${pageContext.request.contextPath}/admin" method="get">
                                     <input type="submit" value="Cancel" class="btn btn-primary btn-block mt-3"/>

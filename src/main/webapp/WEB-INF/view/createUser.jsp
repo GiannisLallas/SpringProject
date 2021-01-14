@@ -56,20 +56,17 @@
                             </div>
 
                             <br/>
-                            <!--<form:input path="passwd" placeholder="Confirm Password"/>
-                          <br/>-->
-
-                            <br/>
+                         
                         </div>
-                        <input type="submit" value="Save" class="btn btn-primary btn-block mt-3"/>
+                          
+                        <div class="col-md-12 form-group">  
+                            <input type="submit" value="Save" class="btn btn-primary btn-block mt-3"/>
                     </div>
+                </form:form>
+                <div class="col-md-12 form-group">
+                    <form:form action="${pageContext.request.contextPath}/loginPage" method="get">
+                        <input type="submit" value="Cancel" class="btn btn-primary btn-block mt-3"/>
+                    </form:form>
                 </div>
-            </div>
-        </form:form>
-        <div class="col-md-6 form-group">
-            <form:form action="${pageContext.request.contextPath}/loginPage" method="get">
-                <input type="submit" value="Cancel" class="btn btn-primary btn-block mt-3"/>
-            </form:form>
-        </div>
-    </body>
-</html>
+                </body>
+                </html>

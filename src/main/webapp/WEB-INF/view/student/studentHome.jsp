@@ -4,7 +4,7 @@
 <%@taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<htmlxmlns:th="http://www.thymeleaf.org">
+
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
@@ -47,14 +47,17 @@
                                     <td>${cu.description}</td>
                                     <td>${cu.stream}</td>
                                     <td>${cu.price}</td>
-<!--                                    <td><a class="btn" href="${pageContext.request.contextPath}/admin/edit?id=${cu.id}">Edit</a></td>
-                                    <td class="buttontd"><a class="btn" href="${pageContext.request.contextPath}/admin/delete?id=${cu.id}">Delete</a></td>-->
+                                    <td><a class="btn" href="${pageContext.request.contextPath}/admin/edit?id=${cu.id}">Edit</a></td>
+                                    <td class="buttontd"><a class="btn" href="${pageContext.request.contextPath}/admin/delete?id=${cu.id}">Delete</a></td>
                                 </tr>
                             </c:forEach>
                         </tbody>
                     </table>
                     <p>
                         <a href="${pageContext.request.contextPath}/">Back</a>
+                    </p>
+                    <p>
+                        <a href="${pageContext.request.contextPath}/student/testPage">Test</a>
                     </p>
                 </div>
             </div>
