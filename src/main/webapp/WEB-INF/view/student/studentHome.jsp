@@ -47,7 +47,6 @@
                                     <td>${cu.description}</td>
                                     <td>${cu.stream}</td>
                                     <td>${cu.price}</td>
-                                    <td><a href="${pageContext.request.contextPath}/student/videos?courseId=${cu.id}">Watch course new</a></td>
                                     <td>
                                         <form:form action="${pageContext.request.contextPath}/student/videos" method="GET"> 
                                             <input type ="hidden" id="courseId" name="courseId" value="${cu.id}">
