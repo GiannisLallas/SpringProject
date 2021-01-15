@@ -47,6 +47,12 @@
                                     <td>${cu.description}</td>
                                     <td>${cu.stream}</td>
                                     <td>${cu.price}</td>
+                                    <td>
+                                        <form:form action="${pageContext.request.contextPath}/student/videos" method="GET"> 
+                                            <input type ="hidden" id="courseId" name="courseId" value="${cu.id}">
+                                    <input type="submit" value="Watch course" class="btn btn-primary btn-block mt-6"/>                                   
+                                </form:form>
+                                    </td>
 <!--                                    <td><a class="btn" href="${pageContext.request.contextPath}/admin/edit?id=${cu.id}">Edit</a></td>
                                     <td class="buttontd"><a class="btn" href="${pageContext.request.contextPath}/admin/delete?id=${cu.id}">Delete</a></td>-->
                                 </tr>
