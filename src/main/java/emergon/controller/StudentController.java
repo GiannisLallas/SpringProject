@@ -1,4 +1,3 @@
-
 package emergon.controller;
 
 import emergon.entity.Courses;
@@ -16,28 +15,28 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 @RequestMapping("/student")
 public class StudentController {
-    
-     @Autowired
+
+    @Autowired
     private CoursesService coursesService;
 //    
 //    @GetMapping()
 //    public String showStudentHomePage(){
 //        return "student/studentHome";
 //    }
-    
-      @GetMapping
-   public String showTeacherHomePage(Model model){
+
+    @GetMapping
+    public String showStudentHomePage(Model model) {
         List<Courses> courses = coursesService.findAll();
         model.addAttribute("courses", courses);
-       return "student/studentHome";
-   }
-    
-   @GetMapping("/videos")
-   public String showVideoPage(){
-//       Optional<Courses> course = coursesService.findById(courseId);
-//       List<Videos> videoList = course.get().getVideosList();
-//       model.addAttribute("videoList", videoList);
-       return "student/videos";
-   }
-    
+        return "student/studentHome";
+    }
+
+    @GetMapping("/videos")
+    public String showVideoPage(@RequestParam("courseId") int courseId, Model model) {
+        Optional<Courses> course = coursesService.findById(courseId);
+        model.addAttribute("course", course);
+        model.addAttribute("videos", course.get().getVideosList());
+        return "student/videos";
+    }
+
 }

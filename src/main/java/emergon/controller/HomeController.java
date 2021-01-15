@@ -24,48 +24,42 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/")
 public class HomeController {
-    
+
     @Autowired
     UsersService usersService;
-    
+
     @Autowired
     RolesService rolesService;
-    
-    @ModelAttribute("roloi")    
-    public List<Roles> getRoles(){
+
+    @ModelAttribute("roloi")
+    public List<Roles> getRoles() {
         List<Roles> roles = rolesService.getRoles();
         roles.remove(0);
-         return  roles;
+        return roles;
     }
-    
-    
+
     @GetMapping
-    public String showHomePage(){
+    public String showHomePage() {
         return "home";
     }
-    
-    
 
-    
     @GetMapping("/create")
-    public String showCreateUserPage(Model model){
+    public String showCreateUserPage(Model model) {
         model.addAttribute("user", new Users());
         return "createUser";
     }
-    
-    
+
     @PostMapping("/create")
-    public String createUser(@ModelAttribute("user") @Valid Users user, BindingResult result, Model model){
-        if(result.hasErrors()){
-            String message ="Registration failed : ";
-            for (ObjectError o : result.getAllErrors()){
+    public String createUser(@ModelAttribute("user") @Valid Users user, BindingResult result, Model model) {
+        if (result.hasErrors()) {
+            String message = "Registration failed : ";
+            for (ObjectError o : result.getAllErrors()) {
                 message = message + "<br/>" + "<i>" + o.getDefaultMessage() + "</i>";
             }
-            
+
             model.addAttribute("message", message);
             return "createUser";
-        }
-        else {
+        } else {
             usersService.create(user);
             return "login";
         }
