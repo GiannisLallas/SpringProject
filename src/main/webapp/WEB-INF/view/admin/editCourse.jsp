@@ -59,12 +59,22 @@
                             <br/>  
                             <div class="col-md-12 form-group">
                                 <label>Students</label>
-                                 <form:select path="users" items="${users}" itemValue="uid" class="form-control" itemLabel="lastName"  multiple="true" />
+                                 <form:select path="users"  class="form-control"  multiple="true" >
+                                     <c:forEach var="user" items="${users}" >
+                                        <option value="${user.uid}" label="${user.lastName} ${user.firstName}"/>
+                                    </c:forEach>
+                                 </form:select>
+                                 
                             </div>
                             
                             <div class="col-md-12 form-group">
                                 <label>Videos</label>
-                                 <form:select path="videosList" items="${videos}" itemValue="id" class="form-control" itemLabel="title"  multiple="true" />
+                                 <form:select path="videosList" class="form-control"  multiple="true" >
+                                     <c:forEach var="video" items="${videos}" >
+                                         <option value="${video.id}" label="${video.title} : ${video.url}"/>
+                                            
+                                    </c:forEach>
+                                 </form:select>
                             </div>
                         </form:form>
                         <br/>
@@ -85,6 +95,6 @@
             </div>
         </div>
     </div>
-
+    
 </body>
 </html>

@@ -54,12 +54,12 @@
                             <br/>  
 <!--                            <div class="col-md-12 form-group">
                                 <label>Students</label>
-                                 <form:select path="users" items="${users}" itemValue="uid" class="form-control" itemLabel="lastName"  multiple="true" />
+                                 <form:select path="users" items="${users}" itemValue="uid" class="form-control" itemLabel="lastName"  multiple="true" readonly="true"/>
                             </div>-->
                             
                             <div class="col-md-12 form-group">
                                 <label>Videos</label>
-                                 <form:select path="videosList" items="${videos}" itemValue="id" class="form-control" itemLabel="title"  multiple="true" readonly="true" />
+                                 <form:select path="videosList" items="${videos}" itemValue="id" class="form-control" itemLabel="url"  multiple="true" readonly="true" />
                             </div>
                         </form:form>
                         <br/>
@@ -70,7 +70,7 @@
                        
                     </div>-->
                     <div class="col-md-12 form-group">
-                        <form:form action="${pageContext.request.contextPath}/student/testPage" method="get">
+                        <form:form action="${pageContext.request.contextPath}/student" method="get">
                             <input type="submit" value="Back" class="btn btn-primary btn-block mt-3"/>
                         </form:form>
                     </div>

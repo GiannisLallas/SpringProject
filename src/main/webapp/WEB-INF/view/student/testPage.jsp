@@ -22,12 +22,14 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <a class="navbar-brand" href="${pageContext.request.contextPath}/student/loginPage">E-kpaideush</a>
-
+                   
+                    <a class="btn btn-primary" href="${pageContext.request.contextPath}/student/mycourses?id=${u.uid}"> My courses</a>
+              
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="./studentHome.html">My courses </a>
-                        </li>
+
+
                         <li class="nav-item">
                             <a class="nav-link" href="#">Store<span class="sr-only">(current)</span></a>
                         </li>
@@ -98,7 +100,7 @@
                                     <div class="card mb-2">
                                         <div class="card-body">
                                             <h4 class="card-title"></h4>
-                                            <p class="card-text text-dark"> Course id: ${cu.id}</p>
+                                            <!--ss<p class="card-text text-dark"> Course id: ${cu.id}</p>-->
                                             <p class="card-text text-dark"> Title : ${cu.title}</p>
 
                                         </div>

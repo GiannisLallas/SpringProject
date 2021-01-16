@@ -6,10 +6,12 @@
 package emergon.service;
 
 import emergon.dao.UsersDao;
+import emergon.entity.Courses;
 import emergon.entity.Roles;
 import emergon.entity.Users;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import javax.transaction.Transactional;
 import static org.apache.tomcat.jni.User.username;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,6 +44,13 @@ public class UsersServiceImpl implements UsersService {
     }
     
     
+    @Override
+    public Users findUserByUsername(String username) throws UsernameNotFoundException {
+        Users myuser = udao.findByUsername(username);
+        
+        return myuser;
+    }
+    
     private List<GrantedAuthority>  convertRolesToGrantedAuthorities(List<Roles> roloi){
           List<GrantedAuthority> authorities = new  ArrayList(); // a list with GrantedAuthority
           for (Roles roles : roloi) {
@@ -68,6 +77,16 @@ public class UsersServiceImpl implements UsersService {
     public List<Users> allStudents() {
        return udao.findStudents();
     }
+
+    @Override
+    public Optional<Users> findById(int id) {
+         Optional<Users> findById = udao.findById(id);
+//        System.out.println("Courseee " + findById.get().getUsers().toString());
+        return findById;
+    }
+
+
+
     
     
     
