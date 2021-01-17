@@ -6,7 +6,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.3.5.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+        <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>emergon</groupId>
     <artifactId>SpringBootProject</artifactId>
@@ -65,6 +65,13 @@
             <artifactId>spring-security-taglibs</artifactId>
         </dependency>
          
+       
+        <dependency>
+            <groupId>com.stripe</groupId>
+            <artifactId>stripe-java</artifactId>
+            <version>20.33.0</version>
+        </dependency>
+
         
     </dependencies>
     <build>
